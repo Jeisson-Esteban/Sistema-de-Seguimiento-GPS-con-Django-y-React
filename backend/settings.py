@@ -13,7 +13,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-9=!9uluktckydjs67$&87
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = os.environ.get('DEBUG', 'False') == 'True'
-DEBUG = False # Temporalmente para depuración
+DEBUG = True # Temporalmente para depuración
 
 # Permitir todos los hosts en desarrollo, restringir en producción
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
