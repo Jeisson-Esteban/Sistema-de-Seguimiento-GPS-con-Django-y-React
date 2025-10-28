@@ -107,8 +107,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000", # Para tu entorno de desarrollo React
     "http://127.0.0.1:3000", # Origen alternativo de React local
     "https://sistema-de-seguimiento-gps-con-django-y.onrender.com",
-    "silly-mooncake-96df93.netlify.app",# Tu propio dominio de Render
+    "hhsilly-mooncake-96df93.netlify.app",# Tu propio dominio de Render
 ]
 
 # Esta línea está bien, ya que obliga a usar la lista anterior en producción.
-CORS_ALLOW_ALL_ORIGINS = False 
+CORS_ALLOW_ALL_ORIGINS = True 
