@@ -12,7 +12,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-9=!9uluktckydjs67$&87ytfx*v&$%8n5ilg51borxf00k0f(8')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+# DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+DEBUG = False # Temporalmente para depuración
 
 # Permitir todos los hosts en desarrollo, restringir en producción
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
@@ -92,4 +93,4 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS
-CORS_ALLOW_ALL_ORIGINS = True  # Cambia a False en producción + CORS_ALLOWED_ORIGINS = ['https://tu-dominio.com']
+CORS_ALLOW_ALL_ORIGINS = False  # Cambia a False en producción + CORS_ALLOWED_ORIGINS = ['https://tu-dominio.com']
