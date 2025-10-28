@@ -94,3 +94,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS
 CORS_ALLOW_ALL_ORIGINS = False  # Cambia a False en producción + CORS_ALLOWED_ORIGINS = ['https://tu-dominio.com']
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "https://sistema-de-seguimiento-gps-con-django-y.onrender.com", 
+]
