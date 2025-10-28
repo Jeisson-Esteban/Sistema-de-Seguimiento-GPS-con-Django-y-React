@@ -34,7 +34,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # Para servir static en producción
+    'whitenoise.middleware.WhiteNoiseMiddleware', # Para servir static en producción
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -89,14 +89,25 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+# [AGREGADO] 
+# Configuración de Archivos de Medios (Media files)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'mediafiles'
+
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# CORS
-CORS_ALLOW_ALL_ORIGINS = False  # Cambia a False en producción + CORS_ALLOWED_ORIGINS = ['https://tu-dominio.com']
 
+# ----------------------------------------------------
+# CONFIGURACIÓN CORS (Permite la conexión desde React Local)
+# ----------------------------------------------------
+
+# Lista de orígenes permitidos para peticiones (necesario si CORS_ALLOW_ALL_ORIGINS es False)
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "https://sistema-de-seguimiento-gps-con-django-y.onrender.com", 
+    "http://localhost:3000", # Para tu entorno de desarrollo React
+    "http://127.0.0.1:3000", # Origen alternativo de React local
+    "https://sistema-de-seguimiento-gps-con-django-y.onrender.com", # Tu propio dominio de Render
 ]
+
+# Esta línea está bien, ya que obliga a usar la lista anterior en producción.
+CORS_ALLOW_ALL_ORIGINS = False 
